@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import './App.css';
+import Home from './pages/Home'
+import Shelf from './pages/Shelf'
+import Cart from './pages/Cart'
+import Wishlist from './pages/Wishlist'
 
 class App extends Component {
   render() {
@@ -26,6 +30,12 @@ class App extends Component {
                 </ul>
               </nav>
             </header>
+            <div className="content">
+              <Route exact path="/" component={Home} />
+              <Route path="/shelf" component={Shelf} />
+              <Route path="/cart" component={Cart} />
+              <Route path="/wishlist" component={Wishlist} />
+            </div>
           </div>
         </Router>
       </div>
