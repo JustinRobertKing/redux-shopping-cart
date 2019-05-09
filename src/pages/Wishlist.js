@@ -4,13 +4,28 @@ import * as WishlistActions from '../actions/WishlistActions'
 
 class Wishlist extends Component {
 	render() {
+		let wishlistItems = Object.keys(this.props.wishlist).map((item, index) => {
+			return (
+				<li key={index}>
+					{item} ({this.props.wishlist[item]})
+				</li>
+			)
+		})
 		return (
 			<div>
-				Wishlist
+				<h1>🖤 My Wishlist</h1>
+				<ul>
+					{wishlistItems}
+				</ul>
 			</div>
 		)
 	}
-
 }
 
-export default Wishlist
+const mapStateToProps = (state) => {
+	return {
+		wishlist: state.wishlist
+	}
+}
+
+export default connect(mapStateToProps, WishlistActions)(Wishlist)
