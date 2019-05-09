@@ -5,10 +5,10 @@ export const addToCart = (item) => {
 	}
 }
 
-export const removeFromCart = (index) => {
+export const removeFromCart = (item) => {
 	return {
 		type: 'REMOVE_CART_ITEM',
-		index
+		item
 	}
 }
 

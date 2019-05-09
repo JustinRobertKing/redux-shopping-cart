@@ -1,7 +1,7 @@
 export default (state = {}, action) => {
+	let newState = {...state}
 	switch (action.type) {
 		case 'ADD_CART_ITEM':
-			let newState = {...state}
 			if (newState[action.item]) { // If I have one in the cart already
 				newState[action.item] += 1
 			} else {
@@ -10,6 +10,9 @@ export default (state = {}, action) => {
 			return newState
 		case 'CLEAR_CART':
 			return {}
+		case 'REMOVE_CART_ITEM':
+			delete newState[action.item]
+			return newState
 		default: 
 			return state
 	}
