@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import * as CartActions from '../actions/CartActions'
 import * as ShelfActions from '../actions/ShelfActions'
+import { addWish } from '../actions/WishlistActions'
 
 class Shelf extends Component {
 	state = {
@@ -18,7 +19,8 @@ class Shelf extends Component {
 		let shelfItems = this.props.shelf.map((item, i) => {
 			return (
 				<li key={i}>
-					<button onClick={() => { this.props.addToCart(item) }}>+</button>
+					<button onClick={() => { this.props.addToCart(item) }}>➕</button>{' '}
+					<button onClick={() => { this.props.addWish(item) }}>🖤</button>{' '}
 					{item}
 				</li>
 			)
@@ -52,5 +54,6 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
 	addToShelf: ShelfActions.addToShelf,
-	addToCart: CartActions.addToCart
+	addToCart: CartActions.addToCart,
+	addWish: addWish
 })(Shelf)

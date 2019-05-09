@@ -7,13 +7,14 @@ class Wishlist extends Component {
 		let wishlistItems = Object.keys(this.props.wishlist).map((item, index) => {
 			return (
 				<li key={index}>
+				<button onClick={() => {this.props.removeWish(item)}}>💔</button>{' '}
 					{item} ({this.props.wishlist[item]})
 				</li>
 			)
 		})
 		return (
 			<div>
-				<h1>🖤 My Wishlist</h1>
+				<h1><span role="img">🖤</span> My Wishlist <span role="img">🖤</span></h1>
 				<ul>
 					{wishlistItems}
 				</ul>

@@ -7,7 +7,7 @@ class Cart extends Component {
 		let cartItems = Object.keys(this.props.cart).map((item, i) => {
 			return (
 				<li key={i}>
-					<button onClick={() => {this.props.removeFromCart(item)}}>X</button>
+					<button onClick={() => {this.props.removeFromCart(item)}}>✖️</button>{' '}
 					{item} ({this.props.cart[item]})
 				</li>
 			)
