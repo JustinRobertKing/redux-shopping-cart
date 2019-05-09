@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import * as WishlistActions from '../actions/WishlistActions'
 
 class Wishlist extends Component {
 	render() {
